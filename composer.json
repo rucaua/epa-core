@@ -1,0 +1,22 @@
+{
+    "name": "rucaua/epa-core",
+    "type": "library",
+    "description": "core classes for easyPhpApi",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maksym Tymofeiev",
+            "email": "tymofeiev.m@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "rucaua/epa-actions": "dev-main",
+        "rucaua/epa-request": "dev-main",
+        "rucaua/epa-response": "dev-main"
+    },
+    "autoload": {
+        "psr-4": { "rucaua\\epa\\core\\": "src" }
+    }
+}
