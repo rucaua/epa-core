@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace rucaua\epa\core;
 
 use rucaua\epa\core\exceptions\ApplicationException;
-use rucaua\epa\core\interfaces\ActionInterface;
+use rucaua\epa\actions\ActionInterface;
 use rucaua\epa\core\interfaces\BaseAppConfigInterface;
 use rucaua\epa\core\interfaces\ConnectionInterface;
 use rucaua\epa\request\InvalidRequestException;
