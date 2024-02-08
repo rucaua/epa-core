@@ -13,8 +13,6 @@ interface BaseAppConfigInterface
 
     public function getResponse(): ResponseInterface;
 
-    public function getConnection(): ConnectionInterface;
-
     public function getEntitiesMap(): array;
 
     public function getCreateAction(): ActionInterface;

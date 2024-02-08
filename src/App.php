@@ -6,8 +6,8 @@ namespace rucaua\epa\core;
 
 use rucaua\epa\core\exceptions\ApplicationException;
 use rucaua\epa\actions\ActionInterface;
+use rucaua\epa\core\exceptions\InvalidConfigException;
 use rucaua\epa\core\interfaces\BaseAppConfigInterface;
-use rucaua\epa\core\interfaces\ConnectionInterface;
 use rucaua\epa\request\InvalidRequestException;
 use rucaua\epa\request\Request;
 use rucaua\epa\request\RequestType;
@@ -53,6 +53,9 @@ class App
     /**
      * @return void
      * @throws ApplicationException
+     * @throws InvalidConfigException
+     * @throws InvalidRequestException
+     * @throws NotFoundException
      */
     #[NoReturn] public function run(): void
     {
@@ -96,7 +99,7 @@ class App
                     ->setRequest($this->config->getRequest())
                     ->setResponse($this->config->getResponse());
             } else {
-                throw new ConfigException();
+                throw new InvalidConfigException();
             }
             try {
                 $action->run();
@@ -119,11 +122,6 @@ class App
     public function response(): ResponseInterface
     {
         return $this->config->getResponse();
-    }
-
-    public function connection(): ConnectionInterface
-    {
-        return $this->config->getConnection();
     }
 
     /**
