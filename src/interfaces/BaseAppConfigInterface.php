@@ -5,6 +5,7 @@ namespace rucaua\epa\core\interfaces;
 
 use rucaua\epa\request\RequestInterface;
 use rucaua\epa\response\ResponseInterface;
+use rucaua\epa\actions\ActionInterface;
 
 interface BaseAppConfigInterface
 {
